@@ -1,0 +1,44 @@
+go_to_work:
+  mana: -30
+  money: 100
+  vivacity: -1
+  tiredness: 70
+
+behold_nature:
+  mana: -10
+  vivacity: 1
+  tiredness: 10
+
+drink_wine_and_watch_the_series:
+  health: -5
+  mana: 30
+  money: -20
+  vivacity: -1
+  tiredness: 10
+
+go_to_bar:
+  mana: 60
+  vivacity: 1
+  tiredness: 40
+  health: -10
+  money: -100
+
+drink_with_marginalized_personalities:
+  mana: 90
+  vivacity: 5
+  tiredness: 80
+  health: -80
+  money: -150
+
+sing_in_the_subway:
+  mana: 10
+  vivacity: 1
+  tiredness: 20
+  money1: 60
+  money2: 10
+
+sleep:
+  mana: -50
+  vivacity: -3
+  tiredness: -70
+  health: 90
