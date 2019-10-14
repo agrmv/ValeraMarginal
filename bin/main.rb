@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require_relative '../lib/condition'
 require_relative '../lib/valera'
 require_relative '../lib/states/states'
 
-states = States.new('../lib/saved_states.yml')
+states = States.new('lib/states/saved_states.yml')
 load_states = states.load
 valera = Valera.new(health: load_states['health'], mana: load_states['mana'], fun: load_states['fun'],
                     fatigue: load_states['fatigue'], money: load_states['money'])
@@ -11,8 +13,7 @@ valera.health = 200
 puts valera.health
 
 states.save(valera)
-#cond = Condition.new(field: 'health', operator: '+', value: 200)
-#puts cond.valid?(valera)
-#valera.health=(200)
-#puts valera.health
-
+# cond = Condition.new(field: 'health', operator: '+', value: 200)
+# puts cond.valid?(valera)
+# valera.health=(200)
+# puts valera.health
