@@ -1,10 +1,16 @@
+require_relative 'error/ValeraError'
+
 class Effect
   attr_accessor :field, :operator, :value
 
   def initialize(field, operator, value)
-    self.field = field
-    self.operator = operator
-    self.value = value
+    if (operator == '+') || (operator == '-')
+      self.field = field
+      self.operator = operator
+      self.value = value
+    else
+      raise ValeraError.new('Effect'), 'Invalid operator'
+    end
   end
 
   def apply(valera)

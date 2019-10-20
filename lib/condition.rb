@@ -1,14 +1,22 @@
+# frozen_string_literal: true
+
+require_relative 'error/ValeraError'
+
 class Condition
   attr_accessor :field, :operator, :value
 
-  def initialize(field:, operator:, value:)#todo: проверять оператор
-    self.field = field
-    self.operator = operator
-    self.value = value
+  def initialize(field:, operator:, value:) # TODO: проверять оператор
+    if (operator == '<') || (operator == '>') || (operator == '>=') || (operator == '<=')
+      self.field = field
+      self.operator = operator
+      self.value = value
+    else
+      raise ValeraError.new('Condition'), 'Invalid operator'
+    end
   end
 
   def valid?(valera)
-    actual_value = valera.send(field)
-    actual_value.send(operator, value)
+    actual_value = valera.send field
+    actual_value.send operator, value
   end
 end
