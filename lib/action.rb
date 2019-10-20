@@ -7,8 +7,7 @@ class Action
   end
 
   def valid?(valera)
-    conditions.map { |c| c.valid?(valera) }
-         .inject(true) { |acc, el| acc && el }
+    conditions.all? { |c| c.valid?(valera) }
   end
 
   def run(valera)
@@ -25,8 +24,7 @@ class ActionEffect
   end
 
   def ok?(valera)
-    conditions.map { |c| c.valid?(valera) }
-        .inject(true) { |acc, el| acc && el }
+    conditions.all? { |c| c.valid?(valera) }
   end
 
   def apply(valera)

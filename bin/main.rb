@@ -3,7 +3,7 @@
 require_relative '../lib/condition'
 require_relative '../lib/valera'
 require_relative '../lib/states/states'
-require_relative '../lib/effect'
+require_relative '../lib/simple_effect'
 require_relative '../lib/action'
 require 'yaml'
 
@@ -20,8 +20,8 @@ states.save(valera)
 
 cond = Condition.new(field: 'health', operator: '>', value: 50)
 cond2 = Condition.new(field: 'mana', operator: '>', value: 50)
-effect = Effect.new('health', '-', 60)
-aeffect = ActionEffect.new(effect: effect, conditions: [cond2])
-action = Action.new(effects: [aeffect], conditions: [cond])
+effect = SimpleEffect.new('health', '-', 60)
+aeffect = ActionEffect.new(effect: effect, conditions: [])
+action = Action.new(effects: [aeffect], conditions: [cond, cond2])
 action.run valera
 puts valera.health

@@ -1,6 +1,6 @@
 require_relative 'error/ValeraError'
 
-class Effect
+class SimpleEffect
   attr_accessor :field, :operator, :value
 
   def initialize(field, operator, value)
