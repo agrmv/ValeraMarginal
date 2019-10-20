@@ -8,12 +8,10 @@ class States
   end
 
   def load
-    YAML.load_file(File.open(@file))
+    YAML.load_file File.open(@file)
   end
 
   def save(valera)
-    File.open(@file, 'w+') do |file|
-      file.write valera.to_yaml
-    end
+    File.open(@file, 'w+') { |file| file.write valera.to_yaml }
   end
 end

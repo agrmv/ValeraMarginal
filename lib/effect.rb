@@ -4,7 +4,8 @@ class Effect
   attr_accessor :field, :operator, :value
 
   def initialize(field, operator, value)
-    if (operator == '+') || (operator == '-')
+    case operator
+    when '+', '-'
       self.field = field
       self.operator = operator
       self.value = value

@@ -6,7 +6,8 @@ class Condition
   attr_accessor :field, :operator, :value
 
   def initialize(field:, operator:, value:) # TODO: проверять оператор
-    if (operator == '<') || (operator == '>') || (operator == '>=') || (operator == '<=')
+    case operator
+    when '<', '>', '>=', '<=', '==', '!='
       self.field = field
       self.operator = operator
       self.value = value
