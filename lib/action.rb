@@ -8,6 +8,10 @@ class Action
 
   def valid?(valera)
     conds.map { |c| c.valid?(valera) }
-      .inject(true) { |acc, el| acc && el }
+        .inject(true) { |acc, el| acc && el }
+  end
+
+  def run(valera)
+    effects.collect { |e| e.apply valera } if self.valid? valera
   end
 end

@@ -1,8 +1,8 @@
-# frozen_string_literal: true
-
 require_relative '../lib/condition'
 require_relative '../lib/valera'
 require_relative '../lib/states/states'
+require_relative '../lib/effect'
+require_relative '../lib/action'
 
 states = States.new('lib/states/saved_states.yml')
 load_states = states.load
@@ -17,3 +17,9 @@ states.save(valera)
 # puts cond.valid?(valera)
 # valera.health=(200)
 # puts valera.health
+
+cond = Condition.new(field: 'health', operator: '>', value: 50)
+effect = Effect.new('health', '-', 60)
+action = Action.new(conds: [cond], effects: [effect])
+action.run valera
+puts valera.health

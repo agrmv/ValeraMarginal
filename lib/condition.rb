@@ -1,8 +1,7 @@
 class Condition
   attr_accessor :field, :operator, :value
 
-  # mana, +, 100
-  def initialize(field:, operator:, value:)
+  def initialize(field:, operator:, value:)#todo: проверять оператор
     self.field = field
     self.operator = operator
     self.value = value
