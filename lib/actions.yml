@@ -4,7 +4,9 @@ actions:
       - mana < 50
       - fatigue < 10
     effects:
-      - fun - 5
+      - effect: fun - 5
+        conditions:
+          - fun > 10
       - mana - 30
       - money + 100
       - fatigue + 70
