@@ -3,6 +3,7 @@ require_relative '../lib/valera'
 require_relative '../lib/states/states'
 require_relative '../lib/effect'
 require_relative '../lib/action'
+require 'yaml'
 
 states = States.new('lib/states/saved_states.yml')
 load_states = states.load
@@ -23,3 +24,5 @@ effect = Effect.new('health', '-', 60)
 action = Action.new(conds: [cond], effects: [effect])
 action.run valera
 puts valera.health
+t = valera.to_yaml
+puts t
