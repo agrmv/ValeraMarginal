@@ -17,7 +17,13 @@ class Condition
   end
 
   def valid?(valera)
-    actual_value = valera.send field
-    actual_value.send operator, value
+    if valera.respond_to?(field)
+      actual_value = valera.send field
+      actual_value.send operator, value
+    else
+      # TODO
+      p 'Invalid field'
+      false
+    end
   end
 end
