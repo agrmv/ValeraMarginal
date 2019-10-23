@@ -17,13 +17,8 @@ class Condition
   end
 
   def valid?(valera)
-    if valera.respond_to?(field)
-      actual_value = valera.send field
-      actual_value.send operator, value
-    else
-      # TODO
-      p 'Invalid field'
-      false
-    end
+    raise ValeraError.new('Effect'), "Invalid field '#{field}'. Available fields: #{valera.instance_variables}" unless valera.respond_to?(field)
+    actual_value = valera.send field
+    actual_value.send operator, value
   end
 end
