@@ -1,0 +1,51 @@
+actions:
+  - name: Go to work
+    conditions:
+      - mana < 50
+      - fatigue < 10
+    effects:
+      - effect: fun - 5
+        conditions:
+          - fun > 10
+      - mana - 30
+      - money + 100
+      - fatigue + 70
+
+#behold_nature:
+#  mana: -10
+#  fun: 1
+#  fatigue: 10
+#
+#drink_wine_and_watch_the_series:
+#  health: -5
+#  mana: 30
+#  money: -20
+#  fun: -1
+#  fatigue: 10
+#
+#go_to_bar:
+#  mana: 60
+#  fun: 1
+#  futigue: 40
+#  health: -10
+#  money: -100
+#
+#drink_with_marginalized_personalities:
+#  mana: 90
+#  fun: 5
+#  fatigue: 80
+#  health: -80
+#  money: -150
+#
+#sing_in_the_subway:
+#  mana: 10
+#  fun: 1
+#  fatigue: 20
+#  money1: 60
+#  money2: 10
+#
+#sleep:
+#  mana: -50
+#  fun: -3
+#  fatigue: -70
+#  health: 90

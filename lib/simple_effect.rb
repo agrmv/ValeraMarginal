@@ -10,7 +10,7 @@ class SimpleEffect
       self.operator = operator
       self.value = value
     else
-      raise ValeraError.new('Effect'), 'Invalid operator'
+      raise ValeraError.new('SimpleEffect'), "Invalid operator: '#{operator}'! Available operators: '+', '-'"
     end
   end
 
@@ -18,6 +18,6 @@ class SimpleEffect
     raise ValeraError.new('Effect'), "Invalid field '#{field}'. Available fields: #{valera.instance_variables}" unless valera.respond_to?(field)
     actual_value = valera.send field
     result = actual_value.send operator, value
-    valera.send "#{field}=", result\
+    valera.send "#{field}=", result
   end
 end
