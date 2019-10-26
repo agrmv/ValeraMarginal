@@ -1,11 +1,11 @@
 actions:
-  - name: Go to work
-    conditions:
-        1:
+  - go_to_work:
+     conditions:
+      check_mana:
           field: mana
           operator: '<='
           value: 50
-    effects:
+     effects:
         effect:
            field: health
            operator: '-'

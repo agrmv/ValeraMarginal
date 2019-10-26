@@ -1,28 +1,28 @@
 class RefactorMe
-  attr_accessor :config, :field, :operator, :value
+  attr_accessor :config, :field, :operator, :value, :action_name
 
   def initialize(config)
-    @config = config
+    self.config = config
   end
 
-  def action_name
-    config['actions'][0]['name']
+  def action_name=(action_name)
+    @action_name = action_name
   end
 
   def action_conditions
-    config['actions'][0]['conditions']
+    config['actions'][0][@action_name]['conditions']
   end
 
   def effects
-    config['actions'][0]['effects']
+    config['actions'][0][@action_name]['effects']
   end
 
   def effects_action
-    config['actions'][0]['effects']['effect']
+    config['actions'][0][@action_name]['effects']['effect']
   end
 
   def effects_condition
-    config['actions'][0]['effects'][0]['conditions']
+    config['actions'][0][@action_name]['effects']['condition']
   end
 
 end
