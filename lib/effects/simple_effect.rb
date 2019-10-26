@@ -1,4 +1,4 @@
-require_relative 'error/ValeraError'
+require_relative '../../lib/error/ValeraError'
 
 class SimpleEffect
   attr_accessor :field, :operator, :value

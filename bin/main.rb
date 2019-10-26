@@ -3,7 +3,8 @@
 require_relative '../lib/condition'
 require_relative '../lib/valera'
 require_relative '../lib/states/states'
-require_relative '../lib/simple_effect'
+require_relative '../lib/effects/simple_effect'
+require_relative '../lib/effects/conditional_effect'
 require_relative '../lib/actions/action'
 require 'yaml'
 
