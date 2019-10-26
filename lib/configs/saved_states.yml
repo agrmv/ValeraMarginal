@@ -1,0 +1,6 @@
+--- !ruby/object:Valera
+health: 100
+mana: 50
+fun: 0
+fatigue: 0
+money: 

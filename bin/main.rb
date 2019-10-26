@@ -2,25 +2,31 @@
 
 require_relative '../lib/condition'
 require_relative '../lib/valera'
-require_relative '../lib/states/states'
+require_relative '../lib/configs/config'
 require_relative '../lib/effects/simple_effect'
 require_relative '../lib/effects/conditional_effect'
 require_relative '../lib/actions/action'
+require_relative '../lib/configs/RefactorMe'
 require 'yaml'
 
-states = States.new('lib/states/saved_states.yml')
-load_states = states.load
+load_states = Config.new('lib/configs/saved_states.yml').load
 valera = Valera.new(health: load_states.health, mana: load_states.mana, fun:
     load_states.fun, fatigue: load_states.fatigue, money: load_states.money)
 
-states.save(valera)
+config = RefactorMe.new(Config.new('lib/actions/actions.yml').load)
+#p config.action_conditions
+#configs.save(valera)
 
-cond = Condition.new(field: 'health', operator: '>', value: 50)
-cond2 = Condition.new(field: 'mana', operator: '>', value: 29)
-effect = SimpleEffect.new('health', '+', 20)
-effect2 = SimpleEffect.new('mana', '+', 10)
+puts  config.effects['effect']['field']
 
-action = Action.new(effects: [effect, effect2], conditions: [cond, cond2])
+
+cond = Condition.new(field: config.action_conditions[1]['field'], operator: config.action_conditions[1]['operator'], value: config.action_conditions[1]['value'])
+#cond2 = Condition.new(field: 'mana', operator: '>', value: 29)
+effect = SimpleEffect.new(config.effects_action['field'], config.effects_action['operator'], config.effects_action['value'])
+p effect
+#effect2 = SimpleEffect.new('mana', '+', 10)
+
+action = Action.new(name: config.action_name, effects: [effect], conditions: [cond])
 action.run valera
 puts valera.health
-puts valera.mana
+#puts valera.mana
