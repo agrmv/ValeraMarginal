@@ -1,3 +1,4 @@
+
 class RefactorMe
   attr_accessor :config, :field, :operator, :value, :action_name
 
@@ -7,39 +8,22 @@ class RefactorMe
 
   def action_name=(action_name)
     @action_name = action_name
+    @config = config['actions'][0][@action_name]
   end
 
   def action_conditions
-    config['actions'][0][@action_name]['conditions']
+    @config['conditions']
   end
 
   def effects
-    config['actions'][0][@action_name]['effects']
+    @config['effects']
   end
 
-  def effects_action
-    config['actions'][0][@action_name]['effects']['effect']
-  end
-
-  def effects_condition
-    config['actions'][0][@action_name]['effects']['condition']
+  def effect_condition(effect)
+    effects[effect]['condition'][effect]
   end
 
 end
 
 
 #TODO merge config.rb with this???
-
-
-#actions:
-#    - name: Go to work
-#conditions:
-#    - mana < 50
-#- fatigue < 10
-#effects:
-#    - effect: fun - 5
-#conditions:
-#    - fun > 10
-#- mana - 30
-#- money + 100
-#- fatigue + 70
