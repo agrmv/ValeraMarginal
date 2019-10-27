@@ -20,7 +20,7 @@ cond2 = Condition.new(field: 'mana', operator: '>', value: 29)
 effect = SimpleEffect.new('health', '+', 20)
 effect2 = SimpleEffect.new('mana', '+', 10)
 
-action = Action.new(effects: [effect, effect2], conditions: [cond, cond2])
+action = Action.new(name: 'name', effects: [effect, effect2], conditions: [cond, cond2])
 action.run valera
 puts valera.health
 puts valera.mana
