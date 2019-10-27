@@ -25,18 +25,18 @@ v_action = gets.chomp
 case v_action
 when '1'
   config.action_name = 'go_to_work'
-  cond  =   Condition.new(config.action_conditions['mana']['field'], config.action_conditions['mana']['operator'], config.action_conditions['mana']['value'])
-  cond2 =   Condition.new(config.action_conditions['fatigue']['field'], config.action_conditions['fatigue']['operator'], config.action_conditions['fatigue']['value'])
-  cond3 =   Condition.new(config.effect_condition('fun')['field'], config.effect_condition('fun')['operator'], config.effect_condition('fun')['value'])
-  effect = SimpleEffect.new(config.effects['fun']['field'], config.effects['fun']['operator'], config.effects['fun']['value'])
+  conds = Array.new
+  effects = Array.new
+  conds.push(Condition.new(config.action_conditions['mana']['field'], config.action_conditions['mana']['operator'], config.action_conditions['mana']['value']))
+  #conds.push(Condition.new(config.action_conditions['fatigue']['field'], config.action_conditions['fatigue']['operator'], config.action_conditions['fatigue']['value']))
+  conds.push(Condition.new(config.effect_condition('fun')['field'], config.effect_condition('fun')['operator'], config.effect_condition('fun')['value']))
+  effects.push(SimpleEffect.new(config.effects['fun']['field'], config.effects['fun']['operator'], config.effects['fun']['value']))
 
-  p config.effects['mana'], config.effects['money'], config.effects['fatigue']
+  effects.push(SimpleEffect.new(config.effects['mana']['field'], config.effects['mana']['operator'], config.effects['mana']['value']))
+  effects.push(SimpleEffect.new(config.effects['money']['field'], config.effects['money']['operator'], config.effects['money']['value']))
+  effects.push(SimpleEffect.new(config.effects['fatigue']['field'], config.effects['fatigue']['operator'], config.effects['fatigue']['value']))
 
-  effect2 = SimpleEffect.new(config.effects['mana']['field'], config.effects['mana']['operator'], config.effects['mana']['value'])
-  effect3 = SimpleEffect.new(config.effects['money']['field'], config.effects['money']['operator'], config.effects['money']['value'])
-  effect4 = SimpleEffect.new(config.effects['fatigue']['field'], config.effects['fatigue']['operator'], config.effects['fatigue']['value'])
-
-  action = Action.new(name: 'Zachem?', effects: [effect, effect2, effect3, effect4], conditions: [cond, cond3])
+  action = Action.new(name: 'Zachem?', effects: effects, conditions: conds)
   action.run valera
   puts valera.money
 else
