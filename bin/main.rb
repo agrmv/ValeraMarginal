@@ -39,6 +39,16 @@ when '1'
   action = Action.new(name: 'Zachem?', effects: effects, conditions: conds)
   action.run valera
   puts valera.money
+when '2'
+  config.action_name = 'behold_nature'
+  effects = Array.new
+  effects.push(SimpleEffect.new(config.effects['fun']['field'], config.effects['fun']['operator'], config.effects['fun']['value']))
+  effects.push(SimpleEffect.new(config.effects['mana']['field'], config.effects['mana']['operator'], config.effects['mana']['value']))
+  effects.push(SimpleEffect.new(config.effects['fatigue']['field'], config.effects['fatigue']['operator'], config.effects['fatigue']['value']))
+
+  action = Action.new(name: '?', effects: effects, conditions: [])
+  action.run valera
+  puts valera.fatigue
 else
   "Valera-Marginal"
 end

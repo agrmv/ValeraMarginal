@@ -1,5 +1,5 @@
 actions:
-  - go_to_work:
+   go_to_work:
       conditions:
         mana:
           field: mana
@@ -31,22 +31,20 @@ actions:
           field: fatigue
           operator: '+'
           value: 70
-  #actions:
-  #  - name: Go to work
-  #    conditions:
-  #      - mana < 50
-  #      - fatigue < 10
-  #    effects:
-  #      - effect: fun - 5
-  #        conditions:
-  #          - fun > 10
-  #      - mana - 30
-  #      - money + 100
-  #      - fatigue + 70
-#behold_nature:
-#  mana: -10
-#  fun: 1
-#  fatigue: 10
+   behold_nature:
+      effects:
+        mana:
+          field: mana
+          operator: '-'
+          value: 10
+        fun:
+          field: fun
+          operator: '+'
+          value: 1
+        fatigue:
+          field: fatigue
+          operator: '+'
+          value: 10
 #
 #drink_wine_and_watch_the_series:
 #  health: -5

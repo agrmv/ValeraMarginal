@@ -8,7 +8,7 @@ class RefactorMe
 
   def action_name=(action_name)
     @action_name = action_name
-    @config = config['actions'][0][@action_name]
+    @config = config['actions'][@action_name]
   end
 
   def action_conditions
