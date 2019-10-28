@@ -21,11 +21,7 @@ module GameStates
     end
 
     def valera_is_dead?
-      if !context[:valera]
-        true
-      else
-        context[:valera].dead?
-      end
+      !context[:valera] || context[:valera].dead?
     end
   end
 end

@@ -9,11 +9,13 @@ module GameStates
     end
 
     def next
-      if (action_id = gets.to_i).between?(1, 8)
+      action_id = gets.to_i - 1
+      if (0...context[:actions].length).include?(action_id)
         context[:actions][action_id].run context[:valera]
         CheckValera.new context
       else
         puts 'Invalid action!'
+        self
       end
     end
   end
