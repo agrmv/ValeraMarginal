@@ -1,9 +1,9 @@
-require_relative './save_states'
+require_relative "./save_states"
 
 module GameStates
   class SelectAction < Base
     def render
-      puts 'Select action:'
+      puts "Select action:"
       context[:actions].each_with_index { |action, id| puts "#{id + 1}) #{action.name}" }
       puts "#{context[:actions].length + 1}) Exit"
     end
@@ -17,7 +17,7 @@ module GameStates
       when context[:actions].length
         ExitGame.new
       else
-        puts 'Invalid action!'
+        puts "Invalid action!"
         self
       end
     end

@@ -1,9 +1,9 @@
-require_relative './base'
+require_relative "./base"
 
 module GameStates
   class ExitGame < Base
     def render
-      puts 'Ещё увидимся...'
+      puts "Ещё увидимся..."
     end
 
     def next

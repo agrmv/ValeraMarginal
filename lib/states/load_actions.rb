@@ -1,16 +1,16 @@
-require_relative './base'
-require_relative './check_valera'
-require_relative '../configs/config'
-require_relative '../configs/action_config'
+require_relative "./base"
+require_relative "./check_valera"
+require_relative "../configs/config"
+require_relative "../configs/action_config"
 
 module GameStates
   class LoadActions < Base
     def render
-      puts 'Load actions...'
+      puts "Load actions..."
     end
 
     def next
-      config = ActionConfig.new(Config.new('configs/actions.yml').load)
+      config = ActionConfig.new(Config.new("configs/actions.yml").load)
       actions = config.get_actions
       CheckValera.new(context.merge(actions: actions))
     end
