@@ -15,7 +15,6 @@ class Game
       @state = @state.next
     end
   end
-
 end
 
 class ActionList

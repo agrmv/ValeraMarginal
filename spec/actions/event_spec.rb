@@ -19,4 +19,3 @@ describe Event do
     end
   end
 end
-

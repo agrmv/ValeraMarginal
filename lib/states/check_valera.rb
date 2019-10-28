@@ -1,11 +1,11 @@
-require_relative './base'
-require_relative './select_action'
+require_relative "./base"
+require_relative "./select_action"
 
 module GameStates
   class CheckValera < Base
     def render
       if valera_is_dead?
-        puts 'Valera is dead :('
+        puts "Valera is dead :("
       else
         valera = context[:valera]
         puts "Valera params: Health [#{valera.health}] Mana [#{valera.mana}] Fun [#{valera.fun}] Fatigue [#{valera.fatigue}] Money [#{valera.money}]"

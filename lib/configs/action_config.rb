@@ -41,9 +41,8 @@ class ActionConfig
 
   def conditions_from_config(config)
     config.map(&:to_symbol_hash)
-          .map { |cond| Condition.new(cond) }
+      .map { |cond| Condition.new(cond) }
   end
-
 end
 
 # TODO merge config.rb with this???
