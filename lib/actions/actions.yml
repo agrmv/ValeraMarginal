@@ -1,5 +1,6 @@
 actions:
   go_to_work:
+    name: Пиздовать на работу
     conditions:
       - field: mana
         operator: '<'
@@ -42,6 +43,13 @@ actions:
           field: fatigue
           operator: '+'
           value: 10
+  sucide:
+    name: Выпилиться
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 1000
 #
 #drink_wine_and_watch_the_series:
 #  health: -5
