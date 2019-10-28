@@ -3,7 +3,7 @@ actions:
     conditions:
       - mana < 50
       - fatigue < 10
-    effects:
+    events:
       - effect: fun - 5
         conditions:
           - fun > 10

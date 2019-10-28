@@ -1,4 +1,4 @@
-class ConditionalEffect
+class Event #todo: это вообще эффект? => Event ???
   attr_accessor :conditions, :effect
 
   def initialize(effect:, conditions: [])

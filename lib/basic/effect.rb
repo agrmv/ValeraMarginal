@@ -1,6 +1,6 @@
 require_relative '../../lib/error/ValeraError'
 
-class SimpleEffect
+class Effect
   attr_accessor :field, :operator, :value
 
   def initialize(field, operator, value)
@@ -10,7 +10,7 @@ class SimpleEffect
       self.operator = operator
       self.value = value
     else
-      raise ValeraError.new('SimpleEffect'), "Invalid operator: '#{operator}'! Available operators: '+', '-'"
+      raise ValeraError.new('Effect'), "Invalid operator: '#{operator}'! Available operators: '+', '-'"
     end
   end
 
