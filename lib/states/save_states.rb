@@ -9,7 +9,7 @@ module GameStates
     end
 
     def next
-      Config.new('lib/configs/saved_states.yml').save(context[:valera])
+      Config.new('configs/saved_states.yml').save(context[:valera])
       CheckValera.new context
     end
   end

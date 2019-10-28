@@ -6,7 +6,7 @@ class Game
   attr_accessor :player, :action_list
 
   def run
-    load_states = Config.new('lib/configs/saved_states.yml').load
+    load_states = Config.new('configs/saved_states.yml').load
     valera = Valera.new(health: load_states.health, mana: load_states.mana, fun: load_states.fun, fatigue: load_states.fatigue, money: load_states.money)
 
     @state = GameStates::LoadActions.new(valera: valera)
