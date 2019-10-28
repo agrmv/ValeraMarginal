@@ -3,7 +3,7 @@ require_relative '../../lib/error/ValeraError'
 class SimpleEffect
   attr_accessor :field, :operator, :value
 
-  def initialize(field, operator, value)
+  def initialize(field:, operator:, value:)
     case operator
     when '+', '-'
       self.field = field
