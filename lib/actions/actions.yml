@@ -1,20 +1,47 @@
 actions:
-  - name: Go to work
+  go_to_work:
     conditions:
-      - mana < 50
-      - fatigue < 10
-    events:
-      - effect: fun - 5
+      - field: mana
+        operator: '<'
+        value: 50
+      - field: fatigue
+        operator: '<'
+        value: 10
+    effects:
+      - effect:
+          field: fun
+          operator: '-'
+          value: 5
         conditions:
-          - fun > 10
-      - mana - 30
-      - money + 100
-      - fatigue + 70
-
-#behold_nature:
-#  mana: -10
-#  fun: 1
-#  fatigue: 10
+          - field: fun
+            operator: '>'
+            value: 5
+      - effect:
+          field: mana
+          operator: '-'
+          value: 30
+      - effect:
+          field: money
+          operator: '+'
+          value: 100
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 70
+  behold_nature:
+    effects:
+      - effect:
+          field: mana
+          operator: '-'
+          value: 10
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 10
 #
 #drink_wine_and_watch_the_series:
 #  health: -5

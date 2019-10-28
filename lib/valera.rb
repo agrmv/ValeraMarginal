@@ -4,12 +4,12 @@ class Valera
   attr_reader :health, :mana, :fun, :fatigue
   attr_accessor :money
 
-  def initialize(health: 100, mana: 0, fun: 0, money: 0, fatigue: 0)
+  def initialize(health: 100, mana: 0, fun: 0, fatigue: 0, money: 0)
     @health = health
     @mana = mana
     @fun = fun
-    @fatigue = money
-    @money = fatigue
+    @fatigue = fatigue
+    @money = money
   end
 
   def dead?
