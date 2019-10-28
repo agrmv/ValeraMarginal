@@ -14,29 +14,16 @@ load_states = Config.new('lib/configs/saved_states.yml').load
 valera = Valera.new(health: load_states.health, mana: load_states.mana, fun: load_states.fun, fatigue: load_states.fatigue, money: load_states.money)
 
 config = RefactorMe.new(Config.new('lib/actions/actions.yml').load)
-#p config.config['actions'][0]['go_to_work']['effects']
-
-
-#print %(
-# Enter action
-#    1. Go to work
-# Enter: )
-v_action = gets.chomp
+actions = config.get_actions
+puts valera.health, valera.fatigue, valera.fun, valera.mana, valera.money
+v_action = 0
 case v_action
-when '1'
-  config.action_name = 'go_to_work'
-  conds = config.action_conditions
-  effects = config.action_effects
-
-  action = Action.new(name: 'Zachem?', effects: effects, conditions: conds)
-  action.run valera
-  puts valera.money
-when '2'
-  config.action_name = 'behold_nature'
-  effects = config.effects
-  action = Action.new(name: '?', effects: effects, conditions: [])
-  action.run valera
-  puts valera.fatigue
+when 0
+  actions[0].run valera
+when 1
+  actions[1].run valera
 else
   "Valera-Marginal"
 end
+puts 'after'
+puts valera.health, valera.fatigue, valera.fun, valera.mana, valera.money

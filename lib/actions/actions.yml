@@ -15,7 +15,7 @@ actions:
         conditions:
           - field: fun
             operator: '>'
-            value: 10
+            value: 5
       - effect:
           field: mana
           operator: '-'
@@ -30,18 +30,18 @@ actions:
           value: 70
   behold_nature:
     effects:
-      mana:
-        field: mana
-        operator: '-'
-        value: 10
-      fun:
-        field: fun
-        operator: '+'
-        value: 1
-      fatigue:
-        field: fatigue
-        operator: '+'
-        value: 10
+      - effect:
+          field: mana
+          operator: '-'
+          value: 10
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 10
 #
 #drink_wine_and_watch_the_series:
 #  health: -5
