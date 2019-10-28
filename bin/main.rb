@@ -26,7 +26,7 @@ case v_action
 when '1'
   config.action_name = 'go_to_work'
   conds = config.action_conditions
-  effects = config.effects
+  effects = config.action_effects
 
   action = Action.new(name: 'Zachem?', effects: effects, conditions: conds)
   action.run valera

@@ -16,15 +16,18 @@ actions:
           - field: fun
             operator: '>'
             value: 10
-      - field: mana
-        operator: '-'
-        value: 30
-      - field: money
-        operator: '+'
-        value: 100
-      - field: fatigue
-        operator: '+'
-        value: 70
+      - effect:
+          field: mana
+          operator: '-'
+          value: 30
+      - effect:
+          field: money
+          operator: '+'
+          value: 100
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 70
   behold_nature:
     effects:
       mana:
