@@ -1,6 +1,6 @@
 require_relative "../spec_helper"
 
-describe SimpleEffect do
+describe Effect do
   subject do
   end
   describe "#ok?" do
