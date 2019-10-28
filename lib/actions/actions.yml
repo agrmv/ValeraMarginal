@@ -7,7 +7,7 @@ actions:
       - field: fatigue
         operator: '<'
         value: 10
-    effects:
+    events:
       - effect:
           field: fun
           operator: '-'
@@ -29,7 +29,7 @@ actions:
           operator: '+'
           value: 70
   behold_nature:
-    effects:
+    events:
       - effect:
           field: mana
           operator: '-'
