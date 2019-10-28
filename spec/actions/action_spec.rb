@@ -24,8 +24,7 @@ describe Action do
 
     context "valid VALERA with appropriate stats" do
       it { expect(subject.valid?(valera)).to be true }
-      it {  expect { subject.run(valera) }.to change(valera, :health).from(30).to(60) }
-      end
+      it { expect { subject.run(valera) }.to change(valera, :health).from(30).to(60) }
     end
   end
 end
