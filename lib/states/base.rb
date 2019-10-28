@@ -8,4 +8,4 @@ module GameStates
   end
 end
 
-#todo: load actions (?, 0) -> check is dead (1) -> render + input actions (2) -> run action (3) -> save valera (4) -> 1
+#todo: load actions (?, 0) -> check valera status (1) -> render + input actions (2) -> run action (3) -> save valera (4) -> 1

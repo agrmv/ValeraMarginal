@@ -6,9 +6,10 @@ module GameStates
     end
 
     def next
-      #todo: get from console ....
-      gets
-      self
+      #todo: валидация id
+      action_id = gets.to_i
+      context[:actions][action_id].run context[:valera]
+      CheckValera.new context
     end
   end
 end
