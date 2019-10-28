@@ -20,6 +20,4 @@ end
 
 class ActionList
   attr_accessor :actions
-
-
 end

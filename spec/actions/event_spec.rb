@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe ConditionalEffect do
+describe Event do
   subject do
 
   end
@@ -13,3 +13,4 @@ describe ConditionalEffect do
     end
   end
 end
+
