@@ -2,10 +2,7 @@ module GameStates
   class SelectAction < Base
     def render
       puts 'Select action:'
-      context[:actions].each_with_index do |action, id|
-        id = id + 1
-        puts "#{id}) #{action.name}"
-      end
+      context[:actions].each_with_index { |action, id| puts "#{id + 1}) #{action.name}" }
     end
 
     def next
