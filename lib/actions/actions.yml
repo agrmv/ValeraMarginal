@@ -13,10 +13,6 @@ actions:
           field: fun
           operator: '-'
           value: 5
-        conditions:
-          - field: fun
-            operator: '>'
-            value: 5
       - effect:
           field: mana
           operator: '-'
@@ -50,37 +46,124 @@ actions:
           field: health
           operator: '-'
           value: 1000
-#
-#drink_wine_and_watch_the_series:
-#  health: -5
-#  mana: 30
-#  money: -20
-#  fun: -1
-#  fatigue: 10
-#
-#go_to_bar:
-#  mana: 60
-#  fun: 1
-#  futigue: 40
-#  health: -10
-#  money: -100
-#
-#drink_with_marginalized_personalities:
-#  mana: 90
-#  fun: 5
-#  fatigue: 80
-#  health: -80
-#  money: -150
-#
-#sing_in_the_subway:
-#  mana: 10
-#  fun: 1
-#  fatigue: 20
-#  money1: 60
-#  money2: 10
-#
-#sleep:
-#  mana: -50
-#  fun: -3
-#  fatigue: -70
-#  health: 90
+  drink_wine_and_watch_the_series:
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 5
+      - effect:
+          field: mana
+          operator: '+'
+          value: 30
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 10
+      - effect:
+          field: money
+          operator: '-'
+          value: 20
+      - effect:
+          field: fun
+          operator: '-'
+          value: 1
+  go_to_bar:
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 10
+      - effect:
+          field: mana
+          operator: '+'
+          value: 60
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 40
+      - effect:
+          field: money
+          operator: '-'
+          value: 100
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+  drink_with_marginalized_personalities:
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 80
+      - effect:
+          field: mana
+          operator: '+'
+          value: 90
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 80
+      - effect:
+          field: money
+          operator: '-'
+          value: 150
+      - effect:
+          field: fun
+          operator: '+'
+          value: 5
+  sing_in_the_subway:
+    events:
+      - effect:
+          field: money
+          operator: '+'
+          value: 50
+        conditions:
+          - field: mana
+            operator: '>'
+            value: 40
+          - field: mana
+            operator: '<'
+            value: 70
+      - effect:
+          field: mana
+          operator: '+'
+          value: 10
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 20
+      - effect:
+          field: money
+          operator: '+'
+          value: 10
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+  sleep:
+    events:
+      - effect:
+          field: health
+          operator: '+'
+          value: 90
+        conditions:
+          - field: mana
+            operator: '<'
+            value: 30
+      - effect:
+          field: mana
+          operator: '-'
+          value: 50
+      - effect:
+          field: fatigue
+          operator: '-'
+          value: 70
+      - effect:
+          field: fun
+          operator: '-'
+          value: 3
+        conditions:
+          - field: mana
+            operator: '>'
+            value: 70
