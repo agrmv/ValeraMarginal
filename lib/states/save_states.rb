@@ -1,6 +1,6 @@
 require_relative './base'
 require_relative './select_action'
-require_relative '../../lib/configs/config'
+require_relative '../configs/config'
 
 module GameStates
   class SaveStates < Base
@@ -9,7 +9,7 @@ module GameStates
     end
 
     def next
-      Config.new('lib/configs/saved_states-rip.yml').save(context[:valera])
+      Config.new('lib/configs/saved_states.yml').save(context[:valera])
       CheckValera.new context
     end
   end

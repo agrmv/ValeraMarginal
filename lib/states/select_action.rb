@@ -1,3 +1,5 @@
+require_relative './save_states'
+
 module GameStates
   class SelectAction < Base
     def render
@@ -11,7 +13,7 @@ module GameStates
       case action_id
       when 0...context[:actions].length
         context[:actions][action_id].run context[:valera]
-        CheckValera.new context
+        SaveStates.new context
       when context[:actions].length
         ExitGame.new
       else

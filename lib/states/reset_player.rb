@@ -8,8 +8,7 @@ module GameStates
 
     def next
       context[:valera] = Valera.new
-      #todo: to save valera
-      CheckValera.new context
+      SaveStates.new context
     end
   end
 end
