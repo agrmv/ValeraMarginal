@@ -1,9 +1,9 @@
 class Action
-  attr_accessor :name, :conditions, :effects
+  attr_accessor :name, :conditions, :events
 
-  def initialize(name:, effects:, conditions: [])
+  def initialize(name:, events:, conditions: [])
     self.name = name
-    self.effects = effects
+    self.events = events
     self.conditions = conditions
   end
 
@@ -12,6 +12,6 @@ class Action
   end
 
   def run(valera)
-    effects.each { |e| e.apply valera } if valid? valera
+    events.each { |e| e.apply valera } if valid? valera
   end
 end

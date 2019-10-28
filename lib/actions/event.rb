@@ -1,4 +1,4 @@
-class Event #todo: это вообще эффект? => Event ???
+class Event
   attr_accessor :conditions, :effect
 
   def initialize(effect:, conditions: [])

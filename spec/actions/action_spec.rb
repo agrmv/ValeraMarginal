@@ -8,7 +8,7 @@ describe Action do
     effect = SimpleEffect.new('health', '+', 20)
     effect2 = SimpleEffect.new('mana', '+', 10)
 
-    Action.new(name: 'test', effects: [effect, effect2], conditions: [cond, cond2])
+    Action.new(name: 'test', events: [effect, effect2], conditions: [cond, cond2])
   end
   describe '#valid?' do
     let(:valid_valera) { Valera.new(mana: 100, fun: 100, money: 10) }
