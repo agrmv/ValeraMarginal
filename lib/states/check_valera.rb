@@ -1,6 +1,6 @@
 require_relative './base'
 require_relative './select_action'
-require_relative './exit_game'
+require_relative './player_death'
 
 module GameStates
   class CheckValera < Base
@@ -17,7 +17,7 @@ module GameStates
       if !valera_is_dead?
         SelectAction.new context
       else
-        ExitGame.new
+        PlayerDeath.new context
       end
     end
 
