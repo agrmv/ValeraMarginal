@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require 'yaml'
+require "yaml"
 
 class Config
   def initialize(file)
@@ -12,7 +10,7 @@ class Config
   end
 
   def save(valera)
-    File.open(@file, 'w+') do |file|
+    File.open(@file, "w+") do |file|
       file.write valera.to_yaml
     end
   end

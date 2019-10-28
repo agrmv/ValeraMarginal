@@ -1,4 +1,4 @@
-require 'yaml'
+require "yaml"
 
 class Valera
   attr_reader :health, :mana, :fun, :fatigue
