@@ -1,6 +1,6 @@
 require_relative "./base"
 require_relative "./check_valera"
-require_relative "../configs/config"
+require_relative "../configs/config_adapter"
 require_relative "../configs/action_config"
 
 module GameStates
@@ -10,7 +10,7 @@ module GameStates
     end
 
     def next
-      config = ActionConfig.new(Config.new("configs/actions.yml").load)
+      config = ActionConfig.new ConfigAdapter.instance.load "configs/actions.yml"
       actions = config.actions
       CheckValera.new(context.merge(actions: actions))
     end
