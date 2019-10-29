@@ -19,7 +19,7 @@ describe Effect do
     end
 
     context 'apply effect' do
-      it { expect { effect.apply valera }.to change(valid_valera, :mana).to(11) }
+      it { expect { effect.apply valera }.to change(valera, :mana).to(9) }
     end
   end
 end

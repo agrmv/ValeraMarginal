@@ -24,7 +24,7 @@ describe Event do
   describe '#apply' do
     context 'applying of VALERA' do
       it { expect { subject.apply(valid_valera) }.to change(valid_valera, :health).to(60) }
-      it { expect { subject.apply(invalid_valera) }.to_not change(valid_valera, :health).to(60) }
+      it { expect { subject.apply(invalid_valera) }.to_not change(valid_valera, :health).from(30) }
     end
   end
 end
