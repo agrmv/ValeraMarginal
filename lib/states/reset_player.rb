@@ -1,5 +1,5 @@
 require_relative "./base"
-require_relative "./check_valera"
+require_relative "./player_state"
 
 module GameStates
   class ResetPlayer < Base
@@ -8,7 +8,7 @@ module GameStates
 
     def next
       context[:valera] = Valera.new
-      SaveStates.new context
+      SavePlayer.new context
     end
   end
 end

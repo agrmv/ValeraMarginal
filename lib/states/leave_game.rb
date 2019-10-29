@@ -1,7 +1,7 @@
 require_relative "./base"
 
 module GameStates
-  class ExitGame < Base
+  class LeaveGame < Base
     def render
       puts "Ещё увидимся..."
     end

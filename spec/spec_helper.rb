@@ -7,8 +7,8 @@ require_relative "../lib/basic/condition"
 require_relative "../lib/error/valera_error"
 
 require_relative "../lib/states/base"
-require_relative "../lib/states/check_valera"
-require_relative "../lib/states/load_actions"
+require_relative "../lib/states/player_state"
+require_relative "../lib/states/load_configs"
 require_relative "../lib/states/select_action"
 
 require_relative "../lib/valera"

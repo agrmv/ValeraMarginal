@@ -14,8 +14,8 @@ describe Event do
     let(:valid_valera) { Valera.new(health: 30, mana: 50, money: 70) }
     let(:invalid_valera) { Valera.new(health: 30, mana: 50, money: 30) }
     context "validation of VALERA" do
-      it { expect(subject.ok?(valid_valera)).to be true }
-      it { expect(subject.ok?(invalid_valera)).to be false }
+      it { expect(subject.valid?(valid_valera)).to be true }
+      it { expect(subject.valid?(invalid_valera)).to be false }
     end
   end
 end

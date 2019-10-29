@@ -1,12 +1,12 @@
 require_relative "./base"
 require_relative "./reset_player"
-require_relative "./exit_game"
+require_relative "./leave_game"
 
 module GameStates
   class PlayerDeath < Base
     def render
       puts "1) Reset player"
-      puts "2) Exit"
+      puts "2) Quit the game"
     end
 
     def next
@@ -14,7 +14,7 @@ module GameStates
       when 1
         ResetPlayer.new context
       when 2
-        ExitGame.new
+        LeaveGame.new
       else
         puts "Invalid menu item!"
         self

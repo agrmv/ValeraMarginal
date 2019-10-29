@@ -6,11 +6,11 @@ class Event
     self.conditions = conditions
   end
 
-  def ok?(valera)
+  def valid?(valera)
     conditions.all? { |c| c.valid?(valera) }
   end
 
   def apply(valera)
-    effect.apply valera if ok? valera
+    effect.apply valera if valid? valera
   end
 end

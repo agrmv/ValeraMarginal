@@ -25,7 +25,6 @@ class ActionConfig
     end
   end
 
-  # TODO: private methods (????)
   def events_from_config(config)
     config.map do |event|
       effect = effect_from_config event.fetch "effect"
@@ -44,5 +43,3 @@ class ActionConfig
       .map { |cond| Condition.new(cond) }
   end
 end
-
-# TODO merge config.rb with this???

@@ -3,7 +3,7 @@ require_relative "./select_action"
 require_relative "./player_death"
 
 module GameStates
-  class CheckValera < Base
+  class PlayerState < Base
     def render
       if valera_is_dead?
         puts "Valera is dead :("
