@@ -1,4 +1,4 @@
-require_relative "../../lib/error/ValeraError"
+require_relative "../../lib/error/valera_error"
 
 class Effect
   attr_accessor :field, :operator, :value

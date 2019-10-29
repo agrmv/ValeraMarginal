@@ -1,4 +1,4 @@
-require_relative "../error/ValeraError"
+require_relative "../error/valera_error"
 
 class Condition
   attr_accessor :field, :operator, :value

@@ -4,7 +4,7 @@ require_relative "../lib/actions/event"
 require_relative "../lib/basic/effect"
 require_relative "../lib/basic/condition"
 
-require_relative "../lib/error/ValeraError"
+require_relative "../lib/error/valera_error"
 
 require_relative "../lib/states/base"
 require_relative "../lib/states/check_valera"

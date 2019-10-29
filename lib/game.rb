@@ -10,13 +10,9 @@ class Game
     valera = Valera.new(health: load_states.health, mana: load_states.mana, fun: load_states.fun, fatigue: load_states.fatigue, money: load_states.money)
 
     @state = GameStates::LoadActions.new(valera: valera)
-    loop do # todo: условие завершения
+    loop do
       @state.render
       @state = @state.next
     end
   end
-end
-
-class ActionList
-  attr_accessor :actions
 end
