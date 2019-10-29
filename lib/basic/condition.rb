@@ -1,11 +1,9 @@
-# frozen_string_literal: true
-
 require_relative "../error/ValeraError"
 
 class Condition
   attr_accessor :field, :operator, :value
 
-  def initialize(field:, operator:, value:) # TODO: проверять оператор
+  def initialize(field:, operator:, value:)
     case operator
     when "<", ">", ">=", "<=", "==", "!="
       self.field = field

@@ -11,7 +11,7 @@ module GameStates
 
     def next
       config = ActionConfig.new(Config.new("configs/actions.yml").load)
-      actions = config.get_actions
+      actions = config.actions
       CheckValera.new(context.merge(actions: actions))
     end
   end
