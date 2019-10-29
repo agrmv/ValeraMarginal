@@ -1,6 +1,8 @@
-require_relative "../lib/valera"
-require_relative "../lib/states/load_configs"
-require "yaml"
+# frozen_string_literal: true
+
+require_relative '../lib/valera'
+require_relative '../lib/states/load_configs'
+require 'yaml'
 
 class Game
   def run

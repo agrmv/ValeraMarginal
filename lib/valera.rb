@@ -1,4 +1,6 @@
-require "yaml"
+# frozen_string_literal: true
+
+require 'yaml'
 
 class Valera
   attr_reader :health, :mana, :fun, :fatigue

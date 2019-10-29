@@ -1,5 +1,7 @@
-require "yaml"
-require "singleton"
+# frozen_string_literal: true
+
+require 'yaml'
+require 'singleton'
 
 class ConfigAdapter
   include Singleton
@@ -9,6 +11,6 @@ class ConfigAdapter
   end
 
   def save(file, object)
-    File.open(file, "w+") { |file| file.write object.to_yaml }
+    File.open(file, 'w+') { |file| file.write object.to_yaml }
   end
 end

@@ -1,9 +1,11 @@
-require_relative "./base"
+# frozen_string_literal: true
+
+require_relative './base'
 
 module GameStates
   class LeaveGame < Base
     def render
-      puts "Ещё увидимся..."
+      puts 'Ещё увидимся...'
     end
 
     def next

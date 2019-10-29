@@ -1,7 +1,9 @@
-require_relative "../actions/action"
-require_relative "../actions/event"
-require_relative "../basic/condition"
-require_relative "../basic/effect"
+# frozen_string_literal: true
+
+require_relative '../actions/action'
+require_relative '../actions/event'
+require_relative '../basic/condition'
+require_relative '../basic/effect'
 
 class Hash
   def to_symbol_hash
@@ -17,18 +19,18 @@ class ActionConfig
   end
 
   def actions
-    config["actions"].map do |name, config|
-      action_name = config.fetch "name", name
-      events = events_from_config config.fetch "events"
-      conditions = conditions_from_config config.fetch "conditions", []
+    config['actions'].map do |name, config|
+      action_name = config.fetch 'name', name
+      events = events_from_config config.fetch 'events'
+      conditions = conditions_from_config config.fetch 'conditions', []
       Action.new(name: action_name, events: events, conditions: conditions)
     end
   end
 
   def events_from_config(config)
     config.map do |event|
-      effect = effect_from_config event.fetch "effect"
-      conditions = conditions_from_config event.fetch "conditions", []
+      effect = effect_from_config event.fetch 'effect'
+      conditions = conditions_from_config event.fetch 'conditions', []
       Event.new(effect: effect, conditions: conditions)
     end
   end
@@ -40,6 +42,6 @@ class ActionConfig
 
   def conditions_from_config(config)
     config.map(&:to_symbol_hash)
-      .map { |cond| Condition.new(cond) }
+          .map { |cond| Condition.new(cond) }
   end
 end
