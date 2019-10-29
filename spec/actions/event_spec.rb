@@ -12,7 +12,7 @@ describe Event do
 
     Event.new(effect: effect, conditions: [cond1, cond2, cond3])
   end
-  describe '#ok?' do
+  describe '#valid?' do
     let(:valid_valera) { Valera.new(health: 30, mana: 50, money: 70) }
     let(:invalid_valera) { Valera.new(health: 30, mana: 50, money: 30) }
     context 'validation of VALERA' do

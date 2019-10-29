@@ -17,4 +17,12 @@ describe ConfigAdapter do
       end
     end
   end
+
+  describe '#load' do
+    context 'check loading of Config' do
+      it 'load states from file' do
+        expect(YAML.load_file('spec/config/test_config.yml')).not_to be nil
+      end
+    end
+  end
 end
