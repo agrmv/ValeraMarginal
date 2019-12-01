@@ -1,7 +1,3 @@
-require_relative '../lib/condition'
-require_relative '../lib/valera'
+require_relative "../lib/game"
 
-valera = Valera.new
-cond = Condition.new(field: 'health', operator: '+', value: 50)
-puts cond.actual?(valera)
-
+Game.new.run

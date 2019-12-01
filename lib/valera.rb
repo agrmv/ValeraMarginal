@@ -1,48 +1,40 @@
+# frozen_string_literal: true
+
+require 'yaml'
+
 class Valera
   attr_reader :health, :mana, :fun, :fatigue
   attr_accessor :money
 
-  def initialize(health: 100, mana: 0, fun: 0, money: 0, fatigue: 0)
+  def initialize(health: 100, mana: 0, fun: 0, fatigue: 0, money: 0)
     @health = health
     @mana = mana
     @fun = fun
-    @fatigue = money
-    @money = fatigue
+    @fatigue = fatigue
+    @money = money
   end
 
   def dead?
-    health <= 0
+    health == 0
   end
 
   def health=(health)
-    @health = if health > 100
-      100
-    else
-      health < 0 ? 0 : health
-    end
+    @health = validate(health, 0, 100)
   end
 
   def mana=(mana)
-    @mana = if mana > 100
-      100
-    else
-      mana < 0 ? 0 : mana
-    end
+    @mana = validate(mana, 0, 100)
   end
 
   def fun=(fun)
-    @fun = if fun > 10
-      10
-    else
-      fun < 0 ? -10 : fun
-    end
+    @fun = validate(fun, -10, 10)
   end
 
   def fatigue=(fatigue)
-    @fatigue = if fatigue > 100
-      100
-    else
-      fatigue < 0 ? 0 : fatigue
-    end
+    @fatigue = validate(fatigue, 0, 100)
+  end
+
+  private def validate(value, min, max)
+    [[value, max].min, min].max
   end
 end
